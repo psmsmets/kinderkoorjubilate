@@ -1,0 +1,22 @@
+{% extends '_main.html.twig' %}
+
+{% set currentPath = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) %}
+
+{% block header %}
+  <div class="alert alert-primary mb-0 text-center">Heb je zin om te zingen? <a href="/lid-worden" class="alert-link">Zing met ons mee!</a></div>
+  <div class="bg-pattern">
+    <div class="container">
+    {% include 'modules/navbar.html.twig' %}
+    {% if body_title is defined %}<h1 class="text-primary text-center display-3 mb-4 pb-4">{{ body_title|raw }}</h1>{% endif %}
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'modules/footer.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+  {{ parent() }}
+<script src="{{ asset('assets/js/kinderkoor.js') }}"></script>
+{% endblock %}

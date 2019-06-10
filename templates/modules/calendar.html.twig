@@ -1,0 +1,22 @@
+<div class="p-3 mt-md-5 pt-md-4">
+
+  <h4 class="pb-2 mb-0 text-muted"><i class="far fa-calendar-alt pr-2"></i> Komende activiteiten</h4>
+
+  {% if calendar|length > 0 %}
+    {% for event in calendar %}
+    {% set d = event.starttime|localizeddate('medium','none')|split(' ') %}
+    <div class="media cal pt-2" onclick="window.location='{{ path('calendar_event', {'uuid': event.uuid}) }}';">
+      <span class="badge badge-dark mr-2 cal cal-sm cal-{{event.category.sequence}}">{{d[0]}}<br>{{d[1]|replace({'.':''})}}</span>
+      <div class="media-body pb-2 mb-0 small lh-125 border-bottom border-gray text-muted">
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <strong class="text-gray-dark">{{event.title|ucfirst}}</strong>
+        </div>
+        <span class="d-block">{{event.formattedperiod}}</span>
+      </div>
+    </div>
+    {% endfor %}
+    <p class="small mt-2 text-right"><a href="/kalender"><i class="fas fa-calendar-plus"></i> Alles bekijken</a></p>
+  {% else %}
+    <p class="muted">Er zijn geen activiteiten in de nabije toekomst.</p>
+  {% endif %}
+</div>

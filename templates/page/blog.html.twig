@@ -1,0 +1,45 @@
+{% extends 'default.html.twig' %}
+
+{% set body_title = 'Blog' %}
+{% set head_title = body_title %}
+
+{% if page.blog_category is not null %}
+  {% set body_title = body_title ~ " <span class=\"text-secondary\"> / " ~ page.blog_category ~ "</span>" %}
+{% endif %}
+
+{% block main %}
+
+  {% for blog_post in page.blog_posts %}
+
+    {% include 'page/item.html.twig' with {'item': blog_post, 'title': true } %}
+
+  {% endfor %}
+
+  {% if page.pagination.last > 1 %}
+    {% set currentPath = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) %}
+    <nav class="mt-5">
+      <ul class="pagination justify-content-center">
+        {%if not page.pagination.isfirst%}
+          <li class="page-item">
+            <a class="page-link" href="{{currentPath}}?pagina={{page.pagination.current-1}}" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
+          </li>
+        {% endif %}
+        {% for p in 1..page.pagination.last %}
+          {% if loop.index==page.pagination.current %}
+            <li class="page-item active" aria-current="page">
+              <a class="page-link" href="#" aria-disabled="true">{{p}} <span class="sr-only">(current)</span></a>
+            </li>
+          {% else %}
+            <li class="page-item"><a class="page-link" href="{{currentPath}}?pagina={{p}}">{{p}}</a></li>
+          {% endif %}
+        {% endfor %}
+        {%if not page.pagination.islast%}
+          <li class="page-item">
+            <a class="page-link" href="{{currentPath}}?pagina={{page.pagination.current+1}}" tabindex="-1"><i class="fas fa-chevron-right"></i></a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+  {% endif %}
+
+{% endblock %}

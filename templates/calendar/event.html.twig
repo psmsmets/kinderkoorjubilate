@@ -1,0 +1,67 @@
+{% extends 'default.html.twig' %}
+
+{% set event = page.calendar_event %}
+{% set cookie = 'calendar_event_'~page.calendar_event.uuid %}
+{% set past  = date(event.trueEndTime) < date() %}
+{% set body_title = "Kalender <span class=\"text-secondary\"> / " ~ event.category ~ "</span>" %}
+{% set head_title = event.title|capitalize %}
+
+{% block main %}
+
+  <div class="p-3 mb-4">
+
+    <div class="media align-top pt-2 cal-{{event.category.sequence}}">
+
+      <span class="badge badge-dark mr-3 cal cal-md cal-{{event.category.sequence}}">{{event.startTime|date('d')}}<br>{{event.startTime|localizeddate('none', 'none', null, null, 'LLL')|trim('.')}}</span>
+
+      <div class="media-body lh-125">
+
+        <h5 class="pb-0 mb-1 d-flex justify-content-between">{{event.title|ucfirst}}
+          <small>
+            {% if event.cancelled %}<span class="badge badge-danger ml-1">Geannuleerd</span>{% endif %}
+            {% if cookie not in app.request.cookies|keys and event.startTime>date() %}<span class="badge badge-gold ml-1">Nieuw</span>{% endif %}
+          </small>
+        </h5>
+
+        <h6 class="d-flex justify-content-between mb-2">{{event.getFormattedPeriod|lower}}</h6>
+
+        <ul class="list-unstyled {% if not event.cancelled %}text-muted{% endif %} small cal">
+          {% if event.location %}<li class="mb-1"><i class="fas fa-map-marked-alt"></i> {{event.location|ucwords}}</li>{% endif %}
+        </ul>
+
+        {% if event.body is not empty %}
+          <div class="mt-3 mt-md-4">{{ event.body|raw }}</div>
+        {% endif %}
+
+        {% if event.document is not empty or event.url is not empty %}
+          <p class="text-center text-md-left">
+            {% if event.url is not empty %}
+              <a href="{{event.url}}" class="btn btn-sm btn-outline-hozt mr-2 mb-2"><i class="fas fa-info-circle"></i> meer info</a>
+            {% endif %}
+            {% if event.document is not empty %}
+              <a href="{{ vich_uploader_asset(event, 'documentFile') }}" class="btn btn-sm btn-outline-hozt mr-2 mb-2"><i class="fas fa-file-pdf"></i> bijlage</a>
+            {% endif %}
+          </p>
+        {% endif %} 
+
+
+        {% if event.image is not empty %}
+          <p class="mt-3"><img src="{{ vich_uploader_asset(event, 'imageFile') }}" class="img-fluid rounded fade-in"></p>
+        {% endif %}
+
+      </div>
+
+    </div>
+
+  </div>
+
+  {% if page.calendar_posts is not empty %}
+
+    <h5 class="m-3 mt-5 ml-md-0"><i class="far fa-newspaper mr-1"></i> Gerelateerde blogberichten</h5>
+    {% for item in page.calendar_posts %}
+      {% include 'page/item.min.html.twig' with {'item': item } %}
+    {% endfor %}
+
+  {% endif %}
+
+{% endblock %}

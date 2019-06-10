@@ -1,0 +1,28 @@
+{% extends 'default.html.twig' %}
+
+{% set body_title = 'Contact' %}
+{% set head_title = body_title %}
+
+{% block main %}
+
+  <div class="p-3 mb-4">
+
+    <div class="row mt-5 justify-content-center">
+      <div class="col col-12 col-md-10 col-lg-8">
+
+    {{ form_start(page.form, {attr: {class: 'needs-validation'} }) }}
+    {{ form_widget(page.form) }}
+
+    {{ form_end(page.form) }}
+
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script src="{{ asset('assets/js/form.js') }}"></script>
+{% endblock %}

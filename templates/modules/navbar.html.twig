@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-light d-print-none">
+  <a class="navbar-brand text-secondary mr-auto mr-lg-0 d-flex align-items-center" href="/"><img class="mb-2" src="{{ asset('assets/img/logo/kinderkoor-no_text.svg') }}" alt="Kinderkoor Jubilate" height="48"> <div class="d-inline-block ml-md-4 ml-2">Kinderkoor Jubilate<br><small>Hoogstraten</small></div></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarHeader">
+    <ul class="navbar-nav text-center text-lg-left mb-4 mb-lg-0 ml-md-auto">
+      <li class="nav-item {% if currentPath starts with path('calendar') %}active{% endif%}">
+        <a class="nav-link" href="{{ path('calendar') }}"><i class="far fa-calendar-alt d-lg-none"></i> Kalender</a>
+      </li>
+      <li class="nav-item {% if currentPath starts with path('blog') %}active{% endif%}">
+        <a class="nav-link" href="{{ path('blog') }}"><i class="fas fa-newspaper d-lg-none"></i> Blog</a>
+      </li>
+      <li class="nav-item {% if currentPath == '/lid-worden' %}active{% endif%}">
+        <a class="nav-link" href="/lid-worden"><i class="fas fa-users d-lg-none"></i> Lid worden</a>
+      </li>
+      <li class="nav-item {% if currentPath starts with path('contact_form') %}active{% endif%}">
+        <a class="nav-link" href="{{ path('contact_form') }}"><i class="fas fa-address-card d-lg-none"></i> Contact</a>
+      </li>
+    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+      <li class="nav-item d-flex align-items-center ml-lg-3">
+        <a class="btn btn-outline-primary" href="{{ path('security_logout') }}" data-toggle="tooltip" data-placement="auto" title="" data-original-title="uitloggen"><i class="fas fa-sign-out-alt"></i></a>
+      </li>
+    {% endif %}
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,36 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        blogPost_doc:
+            uri_prefix:         '%app.path.doc.blogPost%'
+            upload_destination: '%kernel.project_dir%/public_html%app.path.doc.blogPost%'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+        blogPost_img:
+            uri_prefix:         '%app.path.img.blogPost%'
+            upload_destination: '%kernel.project_dir%/public_html%app.path.img.blogPost%'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+        staticPage_doc:
+            uri_prefix:         '%app.path.doc.staticPage%'
+            upload_destination: '%kernel.project_dir%/public_html%app.path.doc.staticPage%'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+        staticPage_img:
+            uri_prefix:         '%app.path.img.staticPage%'
+            upload_destination: '%kernel.project_dir%/public_html%app.path.img.staticPage%'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+        calendar_doc:
+            uri_prefix:         '%app.path.doc.calendar%'
+            upload_destination: '%kernel.project_dir%/public_html%app.path.doc.calendar%'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+        calendar_img:
+            uri_prefix:         '%app.path.img.calendar%'
+            upload_destination: '%kernel.project_dir%/public_html%app.path.img.calendar%'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+        carousel_img:
+            uri_prefix:         '%app.path.img.carousel%'
+            upload_destination: '%kernel.project_dir%/public_html%app.path.img.carousel%'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+        user_img:
+            uri_prefix:         '%app.path.img.user%'
+            upload_destination: '%kernel.project_dir%/public_html%app.path.img.user%'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer

@@ -1,0 +1,8 @@
+{% extends 'default.html.twig' %}
+
+{% set head_title = (page.blog_post.titleShort is empty) ? page.blog_post.title : page.blog_post.titleShort %}
+{% set body_title = page.blog_post.title %}
+
+{% block main %}
+  {% include 'page/item.html.twig' with {'item': page.blog_post, 'title': false } %}
+{% endblock %}

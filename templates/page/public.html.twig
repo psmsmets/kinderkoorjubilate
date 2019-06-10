@@ -1,0 +1,22 @@
+{% extends 'cover.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block lead %}
+
+  {% if page.pinned_blog_post %}
+    {% include 'page/item.html.twig' with {'item': page.pinned_blog_post, 'pinned': true, 'title': true } %}
+  {% endif %}
+
+{% endblock %}
+
+{% block main %}
+
+  <h4 class="m-3 ml-md-0"><i class="far fa-newspaper pr-2"></i> Laatste berichten</h4>
+
+  {% for blog_post in page.special_blog_posts %}
+    {% include 'page/item.html.twig' with {'item': blog_post, 'title': true } %}
+  {% endfor %}
+  <p class="text-right mr-3 mr-md-0"><a href="/blog">Alle berichten <i class="fas fa-angle-double-right"></i></a></p>
+
+{% endblock %}

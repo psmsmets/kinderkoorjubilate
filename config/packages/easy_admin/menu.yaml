@@ -1,0 +1,40 @@
+# This file sets the configuration of the main menu. If your backend is simple,
+# you probably can leave the 'menu' option empty and rely on the default menu
+# created by EasyAdmin.
+#
+# The configuration options are explained in detail in the bundle documentation,
+# which is published at https://github.com/javiereguiluz/EasyAdminBundle
+easy_admin:
+    design:
+        menu:
+           - label: "Pagina's"
+           - label: 'Blog'
+             icon: 'book'
+             children:
+               - { entity: 'BlogPost', label: 'Nieuw', icon: 'plus-square', params: { action: 'new' } }
+               - { entity: 'BlogPost', label: 'Lijst', icon: 'list' }
+               - { entity: 'BlogCategory', label: 'Categorieën', icon: 'bookmark' }
+           - { entity: 'StaticPage', label: "Statische pagina's", icon: 'briefcase' }
+           - { entity: 'CarouselSlide', label: 'Carousel', icon: 'star' }
+           - label: 'Kalender'
+             icon: 'calendar'
+             children:
+               - { entity: 'CalendarEvent', label: 'Nieuw', icon: 'plus-square', params: { action: 'new' } }
+               - { entity: 'CalendarEvent', label: 'Lijst', icon: 'list' }
+               - { entity: 'CalendarCategory', label: 'Categorieën', icon: 'bookmark' }
+           - label: "Varia"
+           - { entity: 'ContactForm', label: 'Contact', icon: 'comment' }
+           - { entity: 'ContactFaq', label: 'FAQ', icon: 'question-circle' }
+           - label: "Toegang"
+           - { entity: 'User', label: 'Gebruikers', icon: 'user' }
+
+    list:
+        title: '%%entity_label%%'
+        max_results: 30
+        actions: ['-delete']
+    edit:
+        title: '%%entity_label%% (#%%entity_id%%)'
+        actions: ['-delete']
+    show:
+        title: '%%entity_label%% (#%%entity_id%%)'
+        actions: ['-delete', '-edit']

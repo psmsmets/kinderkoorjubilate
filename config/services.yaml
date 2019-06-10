@@ -1,0 +1,84 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: 'nl'
+    app_locales: nl|en
+    timezone: 'Europe/Brussels'
+    session_max_idle_time: 1800
+    app.mailer.from: 'webmaster@hozt.be'
+    app.mailer.name: 'Webmaster HoZT'
+    app.about.abbr: 'HoZT'
+    app.about.name: 'Kinderkoor Jubilate'
+    app.about.org.name: '%app.about.name%'
+#   app.about.org.number: 'BE0644916871'
+#   app.about.bank_account: 'BE88 0689 0449 7341'
+    app.defaults.blogPost.items_home: 3
+    app.defaults.blogPost.items_page: 10
+    app.defaults.blogCategory.id: 1
+    app.defaults.calendarCategory.id: 3
+    app.defaults.competitionPool.id: 1
+    app.defaults.sponsorCategory.id: 1
+    app.defaults.scheduleNotice.days: 21
+    app.regex.telephone: '^(\+|00)(324|316)([1-9]\d{7})$' # enkel Belgie en Nederland
+    app.regex.postalcode: '^([1-9]{1}\d{3})(|[A-Z]{2})$'
+    app.regex.datestring: '^((0[1-9]|[12]\d|3[01]|[1-9])[/.-](0[1-9]|1[0-2]|[1-9])[/.-][12]\d{3})$'
+    app.path.doc.blogPost: /uploads/files/blog
+    app.path.img.blogPost: /uploads/images/blog
+    app.path.doc.staticPage: /uploads/files/page
+    app.path.img.staticPage: /uploads/images/page
+    app.path.doc.calendar: /uploads/files/calendar
+    app.path.img.calendar: /uploads/images/calendar
+    app.path.img.carousel: /uploads/images/carousel
+    app.path.img.user: /uploads/images/user
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        public: false       # Allows optimizing the container by removing unused services; this also means
+                            # fetching services directly from the container via $container->get() won't work.
+                            # The best practice is to be explicit about your dependencies anyway.
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+
+    app.logout.listener:
+        class: App\Listener\LogoutListener
+
+    app.session_idle.handler:
+        class: App\Security\SessionIdleHandler
+        arguments: ["@session", "@router", "@security.helper", '%session_max_idle_time%']
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+
+    Ambta\DoctrineEncryptBundle\Encryptors\EncryptorInterface:
+        alias: ambta_doctrine_encrypt.encryptor
+        public: false
+
+ambta_doctrine_encrypt:
+    secret_directory_path: '%kernel.project_dir%'   # Default value
+    encryptor_class: Halite # Defuse
+
+cocur_slugify:
+    lowercase: true
+    separator: '-'
+
+eu_cookie_law:
+    response_injection: true # default true
+    template: modules/cookie_modal.html.twig # twig template name, default: EuCookieLawBundle::cookie_law_bar.html.twig

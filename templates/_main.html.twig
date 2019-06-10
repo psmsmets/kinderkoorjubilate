@@ -1,0 +1,108 @@
+{% set strategy = 'html' %}
+{% set scheduleNotice = [] %}
+{% set loading = '<div class="d-flex justify-content-center"><div class="spinner-border m-5" role="status" ><span class="sr-only">Loading...</span></div></div>' %}
+
+{% set _side = block('side') %}
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Kinderkoor Jubilate Hoogstraten.">
+        <meta name="description" content="Hoogstraten,kinderkoor,Jubilate,zingen,kinderen,koor">
+        <meta name="author" content="Pieter Smets (pieter@steps4it.be)">
+
+        <meta name="mobile-web-app-capable" content="yes">
+        <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('assets/img/icons/apple-icon-57x57.png') }}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('assets/img/icons/apple-icon-60x60.png') }}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets/img/icons/apple-icon-72x72.png') }}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/img/icons/apple-icon-76x76.png') }}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('assets/img/icons/apple-icon-114x114.png') }}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets/img/icons/apple-icon-120x120.png') }}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('assets/img/icons/apple-icon-144x144.png') }}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('assets/img/icons/apple-icon-152x152.png') }}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/icons/apple-icon-180x180.png') }}">
+
+        <link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('assets/img/icons/android-icon-192x192.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/icons/favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/img/icons/favicon-96x96.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/icons/favicon-16x16.png') }}">
+
+        <meta name="msapplication-tap-highlight" content="no">
+        <link rel="msapplication-square57x57logo" sizes="57x57" href="{{ asset('assets/img/icons/apple-icon-57x57.png') }}">
+        <link rel="msapplication-square60x60logo" sizes="60x60" href="{{ asset('assets/img/icons/apple-icon-60x60.png') }}">
+        <link rel="msapplication-square72x72logo" sizes="72x72" href="{{ asset('assets/img/icons/apple-icon-72x72.png') }}">
+        <link rel="msapplication-square76x76logo" sizes="76x76" href="{{ asset('assets/img/icons/apple-icon-76x76.png') }}">
+        <link rel="msapplication-square114x114logo" sizes="114x114" href="{{ asset('assets/img/icons/apple-icon-114x114.png') }}">
+        <link rel="msapplication-square120x120logo" sizes="120x120" href="{{ asset('assets/img/icons/apple-icon-120x120.png') }}">
+        <link rel="msapplication-square144x144logo" sizes="144x144" href="{{ asset('assets/img/icons/apple-icon-144x144.png') }}">
+        <link rel="msapplication-square152x152logo" sizes="152x152" href="{{ asset('assets/img/icons/apple-icon-152x152.png') }}">
+        <link rel="msapplication-square180x180logo" sizes="180x180" href="{{ asset('assets/img/icons/apple-icon-180x180.png') }}">
+
+
+        <link rel="manifest" href="{{ asset('assets/img/icons/manifest.json') }}">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="{{ asset('assets/img/icons/ms-icon-144x144.png') }}">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="shortcut icon" href="{{ asset('assets/img/icons/favicon.ico') }}" type="image/x-icon">
+        <link rel="icon" href="{{ asset('assets/img/icons/favicon.ico') }}" type="image/x-icon">
+
+        <title>{% if head_title is defined %}{{ head_title }} - {% endif %}Kinderkoor Jubilate</title>
+
+        <!-- Core CSS -->
+        <link href="{{ asset('assets/css/kinderkoor_bootstrap.css') }}" rel="stylesheet" />
+        <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link href="{{ asset('assets/css/animate.css') }}" rel="stylesheet" />
+        <link href="{{ asset('assets/css/kinderkoor.css') }}" rel="stylesheet" />
+
+        <!-- Custom styles for this template -->
+        {% block stylesheets %}{% endblock %}
+
+    </head>
+
+    <body>
+
+        {% block header %}{% endblock %}
+        {% block top %}{% endblock %}
+
+        <div class="container">
+            <div class="row justify-content-center">
+            {% block body %}
+                <div class="col col-12 {% if _side is not empty %}col-md-8{%else%}col-md-10 col-lg-9{%endif%} col-print-12">
+                  <div id="notices" class="pl-2 pr-2 p-md-0">
+                    {% include 'modules/alerts.html.twig' %}
+                  </div>
+                  {% block lead %}{% endblock %}
+                  {% block main %}{% endblock %}
+                </div>
+              {% if _side is not empty %}
+                <div class="col col-12 col-md-4 d-print-none">
+                   {% block side %}{% endblock %}
+                </div>
+              {% endif %}
+            {% endblock %}
+            </div><!-- /div row -->
+        </div><!-- /div container -->
+
+        {% block footer %}{% endblock %}
+
+        <a id="toTop" href="javascript:;" style="visibility:hidden;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="/assets/img/to-top@2x.png"></a>
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.js"></script>
+
+        <!-- Additional page JavaScript
+        ================================================== -->
+        {% block javascripts %}{% endblock %}
+
+    </body>
+
+</html>

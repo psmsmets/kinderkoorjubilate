@@ -1,0 +1,29 @@
+{% extends 'default.html.twig' %}
+
+{% set head_title = (page.static.titleShort is empty) ? page.static.title : page.static.titleShort %}
+{% set body_title = page.static.title %}
+
+{% block main %}
+
+  <div class="p-3 mb-4">
+
+    {% if page.static.showUpdatedAt %}
+        <div class="small text-muted pb-3"><span class="modified pr-2">Laatst aangepast op {{ page.static.updatedAt|localizeddate('full','none') }}.</span></div>
+    {% endif %}
+
+    {% if page.static.image is not empty %}
+        <p><img src="{{ vich_uploader_asset(page.static, 'imageFile') }}" class="img-fluid rounded fade-in"></p>
+    {% endif %}
+
+    {{ page.static.body|raw }}
+    
+
+    {% if page.static.document is not empty %}
+      <p class="text-center text-md-left">
+        <a href="{{ vich_uploader_asset(page.static, 'documentFile') }}" class="btn btn-sm btn-primary"><i class="fas fa-file-pdf"></i> bijlage</a>
+      </p>
+    {% endif %}
+
+  </div>
+
+{% endblock %}

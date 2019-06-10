@@ -1,0 +1,18 @@
+{% extends 'default.html.twig' %}
+
+{% block top %}
+  {% include 'modules/carousel.html.twig' with {'carousel': page.carousel } %}
+{% endblock %}
+
+{% block side %}
+  {% include 'modules/calendar.html.twig' with {'calendar': page.calendar } %}
+{% endblock %}
+
+{% block javascripts %}
+  {{ parent() }}
+  <script src="{{ asset('assets/js/jquery.bcSwipe.min.js') }}"></script>
+  <script>
+    $('.carousel').carousel({ interval: 6500 });
+    $('.carousel').bcSwipe({ threshold: 60 });
+  </script>
+{% endblock %}

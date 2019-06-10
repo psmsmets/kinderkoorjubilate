@@ -1,0 +1,20 @@
+# This file sets the configuration options related to the backend design.
+# If your backend is simple, you probably can rely on the default values of
+# the options and just define the value of the 'site_name' option.
+#
+# The configuration options are explained in detail in the bundle documentation,
+# which is published at https://github.com/javiereguiluz/EasyAdminBundle
+easy_admin:
+    site_name: 'Kinderkoor Jubilate'
+    formats:
+        date:     'Y-m-d'
+        time:     'H:i'
+        datetime: 'Y-m-d H:i'
+    design:
+        brand_color: '#9fc93b'
+        assets:
+            css:
+                - 'assets/css/kinderkoor_bootstrap.css'
+                - 'assets/css/easy_admin.css'
+            js:
+                - 'bundles/easyadmin/bootstrap-all.js'

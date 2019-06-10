@@ -1,0 +1,26 @@
+
+  <div class="mb-4">
+
+    <h2 class="text-primary d-flex justify-content-between">{{ item.title|ucfirst }}</h2>
+
+    {{ item.body|raw }}
+
+    {% if item.document is not empty %}
+      <p class="text-center text-md-left">
+        <a href="{{ vich_uploader_asset(item, 'documentFile') }}" class="btn btn-sm btn-outline-hozt"><i class="fas fa-file-pdf"></i> bijlage</a>
+      </p>
+    {% endif %}
+
+    {% if item.image is not empty %}
+        <p><img src="{{ vich_uploader_asset(item, 'imageFile') }}" class="img-fluid rounded" style="max-height:800px;"></p>
+    {% endif %}
+
+    <div class="small text-muted d-flex justify-content-between">
+      <ul class="list-inline mb-0">
+        <li class="list-inline-item d-none"><i class="far fa-newspaper"></i> <a class="text-muted text-decoration-none" href="{{ path('blog_category', {'slug': item.category.slug}) }}">{{ item.category }}</a></li>
+        <li class="list-inline-item">{{ item.publishAt|localizeddate('full','none') }}</li>
+        <li class="list-inline-item d-none"><i class="far fa-user" data-toggle="tooltip" data-placement="right" title="" data-original-title="{{ item.Author.firstName }}"></i></li>
+      </ul>
+    </div>
+
+  </div>

@@ -1,0 +1,16 @@
+{% extends 'default.html.twig' %}
+
+{% block title %}{{ blog_category.title }}{% endblock %}
+
+{% block main %}
+
+        <h1 class="text-primary">{{ blog_category.title }}</h1>
+        <p></p>
+
+        {% for item in blog_items %}
+
+        <p>{{ item.title }}</p>
+
+        {% endfor %}
+
+{% endblock %}
