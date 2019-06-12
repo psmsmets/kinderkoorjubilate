@@ -7,12 +7,12 @@
 
     {% if item.document is not empty %}
       <p class="text-center text-md-left">
-        <a href="{{ vich_uploader_asset(item, 'documentFile') }}" class="btn btn-sm btn-outline-hozt"><i class="fas fa-file-pdf"></i> bijlage</a>
+        <a href="{{ vich_uploader_asset(item, 'documentFile') }}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-file-pdf"></i> bijlage</a>
       </p>
     {% endif %}
 
     {% if item.image is not empty %}
-        <p><img src="{{ vich_uploader_asset(item, 'imageFile') }}" class="img-fluid rounded" style="max-height:800px;"></p>
+        <p><img src="{{ vich_uploader_asset(item, 'imageFile') }}" class="img-fluid" style="max-height:800px;"></p>
     {% endif %}
 
     <div class="small text-muted d-flex justify-content-between">
