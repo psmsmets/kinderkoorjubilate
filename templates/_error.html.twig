@@ -12,9 +12,9 @@
 
 {% block body %}
 
-  <div class="col-12 col-md-6 offset-md-3 text-center">
+  <div class="col-12 col-md-6 text-center">
 
-    <img class="mb-4 d-none d-md-inline" src="{{ asset('assets/img/logo/kinderkoor.svg') }}" alt="" height="100">
+    <img class="mb-4 d-none d-md-inline" src="{{ asset('assets/img/logo/kinderkoor-no_text.svg') }}" alt="" height="100">
 
     <h1 class="text-danger pb-3">Oeps! Er gaat iets verkeerd</h1>
 
@@ -24,7 +24,7 @@
 
     <p class="lead">{% block error_handling %}{% endblock %}</p>
     <p class="lead text-right">
-        <a href="{{ path('homepage') }}"><i class="fas fa-angle-double-right"></i> ga naar de startpagina <i class="fas fa-swimming-pool"></i></a>
+        <a href="{{ path('homepage') }}"><i class="fas fa-angle-double-right"></i> ga naar de startpagina</a>
     </p>
 
   </div>
