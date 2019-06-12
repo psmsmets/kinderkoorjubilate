@@ -12,7 +12,7 @@
     {% endif %}
 
     {% if page.static.image is not empty %}
-        <p><img src="{{ vich_uploader_asset(page.static, 'imageFile') }}" class="img-fluid rounded fade-in"></p>
+        <p><img src="{{ vich_uploader_asset(page.static, 'imageFile') }}" class="img-fluid"></p>
     {% endif %}
 
     {{ page.static.body|raw }}

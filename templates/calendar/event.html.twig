@@ -19,13 +19,13 @@
         <h5 class="pb-0 mb-1 d-flex justify-content-between">{{event.title|ucfirst}}
           <small>
             {% if event.cancelled %}<span class="badge badge-danger ml-1">Geannuleerd</span>{% endif %}
-            {% if cookie not in app.request.cookies|keys and event.startTime>date() %}<span class="badge badge-gold ml-1">Nieuw</span>{% endif %}
+            {% if cookie not in app.request.cookies|keys and event.startTime>date() %}<span class="badge badge-secondary ml-1">Nieuw</span>{% endif %}
           </small>
         </h5>
 
         <h6 class="d-flex justify-content-between mb-2">{{event.getFormattedPeriod|lower}}</h6>
 
-        <ul class="list-unstyled {% if not event.cancelled %}text-muted{% endif %} small cal">
+        <ul class="list-unstyled {% if not event.cancelled %}text-muted{% endif %} small">
           {% if event.location %}<li class="mb-1"><i class="fas fa-map-marked-alt"></i> {{event.location|ucwords}}</li>{% endif %}
         </ul>
 
@@ -36,17 +36,17 @@
         {% if event.document is not empty or event.url is not empty %}
           <p class="text-center text-md-left">
             {% if event.url is not empty %}
-              <a href="{{event.url}}" class="btn btn-sm btn-outline-hozt mr-2 mb-2"><i class="fas fa-info-circle"></i> meer info</a>
+              <a href="{{event.url}}" class="btn btn-sm btn-outline-secondary mr-2 mb-2"><i class="fas fa-info-circle"></i> meer info</a>
             {% endif %}
             {% if event.document is not empty %}
-              <a href="{{ vich_uploader_asset(event, 'documentFile') }}" class="btn btn-sm btn-outline-hozt mr-2 mb-2"><i class="fas fa-file-pdf"></i> bijlage</a>
+              <a href="{{ vich_uploader_asset(event, 'documentFile') }}" class="btn btn-sm btn-outline-secondary mr-2 mb-2"><i class="fas fa-file-pdf"></i> bijlage</a>
             {% endif %}
           </p>
         {% endif %} 
 
 
         {% if event.image is not empty %}
-          <p class="mt-3"><img src="{{ vich_uploader_asset(event, 'imageFile') }}" class="img-fluid rounded fade-in"></p>
+          <p class="mt-3"><img src="{{ vich_uploader_asset(event, 'imageFile') }}" class="img-fluid"></p>
         {% endif %}
 
       </div>

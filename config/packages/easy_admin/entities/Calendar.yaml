@@ -13,11 +13,11 @@ easy_admin:
             label: 'Kalender :: categorie'
             list:
                 fields:
-                    - { property: 'id', label: 'Id' }
+                    - { property: 'sequence', label: 'Nr' }
+                    #- { property: 'id', label: 'Id' }
                     - { property: 'enabled', label: 'Actief', type: 'boolean' }
                     - { property: 'title', label: 'Titel' }
                     - { property: 'slug', label: 'Slug' }
-                    - { property: 'sequence', label: 'Nr' }
                     - { property: 'updatedAt', label: 'Laatst aangepast' }
                 sort: ['sequence', 'ASC']
             form:
