@@ -1,14 +1,14 @@
 {
-  "assets/build/animate.css": "/assets/build/animate.css",
-  "assets/build/bootstrap.css": "/assets/build/bootstrap.css",
-  "assets/build/calendar.js": "/assets/build/calendar.js",
-  "assets/build/carousel.js": "/assets/build/carousel.js",
-  "assets/build/easy_admin.css": "/assets/build/easy_admin.css",
-  "assets/build/form.js": "/assets/build/form.js",
-  "assets/build/kinderkoor.css": "/assets/build/kinderkoor.css",
-  "assets/build/kinderkoor.js": "/assets/build/kinderkoor.js",
-  "assets/build/runtime.js": "/assets/build/runtime.js",
-  "assets/build/security.css": "/assets/build/security.css",
-  "assets/build/vendors~calendar~carousel~form~kinderkoor.js": "/assets/build/vendors~calendar~carousel~form~kinderkoor.js",
-  "assets/build/vendors~carousel~kinderkoor.js": "/assets/build/vendors~carousel~kinderkoor.js"
+  "assets/build/0.2375624d.js": "/assets/build/0.2375624d.js",
+  "assets/build/1.76893ba2.js": "/assets/build/1.76893ba2.js",
+  "assets/build/animate.css": "/assets/build/animate.0f432265.css",
+  "assets/build/bootstrap.css": "/assets/build/bootstrap.7f9aaaee.css",
+  "assets/build/calendar.js": "/assets/build/calendar.28e49ce3.js",
+  "assets/build/carousel.js": "/assets/build/carousel.45c97c9e.js",
+  "assets/build/easy_admin.css": "/assets/build/easy_admin.1c816ab7.css",
+  "assets/build/form.js": "/assets/build/form.53941e34.js",
+  "assets/build/kinderkoor.css": "/assets/build/kinderkoor.3834b5a8.css",
+  "assets/build/kinderkoor.js": "/assets/build/kinderkoor.bc0d1b5b.js",
+  "assets/build/runtime.js": "/assets/build/runtime.77e9a948.js",
+  "assets/build/security.css": "/assets/build/security.95132576.css"
 }
