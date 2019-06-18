@@ -1,0 +1,14 @@
+{
+  "assets/build/animate.css": "/assets/build/animate.css",
+  "assets/build/bootstrap.css": "/assets/build/bootstrap.css",
+  "assets/build/calendar.js": "/assets/build/calendar.js",
+  "assets/build/carousel.js": "/assets/build/carousel.js",
+  "assets/build/easy_admin.css": "/assets/build/easy_admin.css",
+  "assets/build/form.js": "/assets/build/form.js",
+  "assets/build/kinderkoor.css": "/assets/build/kinderkoor.css",
+  "assets/build/kinderkoor.js": "/assets/build/kinderkoor.js",
+  "assets/build/runtime.js": "/assets/build/runtime.js",
+  "assets/build/security.css": "/assets/build/security.css",
+  "assets/build/vendors~calendar~carousel~form~kinderkoor.js": "/assets/build/vendors~calendar~carousel~form~kinderkoor.js",
+  "assets/build/vendors~carousel~kinderkoor.js": "/assets/build/vendors~carousel~kinderkoor.js"
+}

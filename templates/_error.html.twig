@@ -5,8 +5,8 @@
 
 
 {% block stylesheets %}
-    {{ parent() }}
-    <link href="{{ asset('assets/css/security.css') }}" rel="stylesheet" />
+  {{ parent() }}
+  {{ encore_entry_link_tags('security') }}
 {% endblock %}
 
 

@@ -1,0 +1,83 @@
+{
+  "entrypoints": {
+    "kinderkoor": {
+      "js": [
+        "/assets/build/runtime.js",
+        "/assets/build/vendors~calendar~carousel~form~kinderkoor.js",
+        "/assets/build/vendors~carousel~kinderkoor.js",
+        "/assets/build/kinderkoor.js"
+      ],
+      "css": [
+        "/assets/build/kinderkoor.css"
+      ]
+    },
+    "form": {
+      "js": [
+        "/assets/build/runtime.js",
+        "/assets/build/vendors~calendar~carousel~form~kinderkoor.js",
+        "/assets/build/form.js"
+      ]
+    },
+    "carousel": {
+      "js": [
+        "/assets/build/runtime.js",
+        "/assets/build/vendors~calendar~carousel~form~kinderkoor.js",
+        "/assets/build/vendors~carousel~kinderkoor.js",
+        "/assets/build/carousel.js"
+      ]
+    },
+    "calendar": {
+      "js": [
+        "/assets/build/runtime.js",
+        "/assets/build/vendors~calendar~carousel~form~kinderkoor.js",
+        "/assets/build/calendar.js"
+      ]
+    },
+    "bootstrap": {
+      "js": [
+        "/assets/build/runtime.js"
+      ],
+      "css": [
+        "/assets/build/bootstrap.css"
+      ]
+    },
+    "easy_admin": {
+      "js": [
+        "/assets/build/runtime.js"
+      ],
+      "css": [
+        "/assets/build/easy_admin.css"
+      ]
+    },
+    "security": {
+      "js": [
+        "/assets/build/runtime.js"
+      ],
+      "css": [
+        "/assets/build/security.css"
+      ]
+    },
+    "animate": {
+      "js": [
+        "/assets/build/runtime.js"
+      ],
+      "css": [
+        "/assets/build/animate.css"
+      ]
+    }
+  },
+  "integrity": {
+    "/assets/build/runtime.js": "sha384-bNXn+wV9MMJjG6ggOtE9037K3KNbzhQD3hlb8hRc1udBnyS0iEA/N68MCarppkIt",
+    "/assets/build/vendors~calendar~carousel~form~kinderkoor.js": "sha384-fe5HnAySj+afqKJ4E2E3vypkaaXkyYaDsBXE6138yJFaV6xcVLdhM7B8YkdgQz/f",
+    "/assets/build/vendors~carousel~kinderkoor.js": "sha384-LFNkVYUnzmLbO5lEoLTN6RUqix3Fj8VsxBe5WFnpL/2Jp90XPcIK6Mdk5jKIbjE3",
+    "/assets/build/kinderkoor.js": "sha384-702EgTdzmHDiSDEVNnlnqGnlnLVWxvzI9CahwDjzGXu8wXX8zlIWBvIO1VRYsBaG",
+    "/assets/build/kinderkoor.css": "sha384-rCRsWF8GcPpDPzZFdt/n41yp/exwT/QPTwHOYzD4W7FdXV79qUGFOYgY5YeSEdHS",
+    "/assets/build/form.js": "sha384-ZZYDvkfCdEQmR7KN+LKQRKQ2gmBmSGbx5PvnhfJJjXeWmF3TJUj7lb4olRuuKalw",
+    "/assets/build/carousel.js": "sha384-/diNGcvgYpsOC4JRXlbMeooMZqi08eJZhBswLIJfr8QEnmvkRbeUKYGJORpb2RDv",
+    "/assets/build/calendar.js": "sha384-2j9C4jFGSmmCCK8c1UUDcgSRm3dKEzJrOfrKZYMOMTR91HYRzGNw1wlCd2EJ5ySt",
+    "/assets/build/bootstrap.css": "sha384-p4I0YJQNZw6fyf08/h8bnK0Vb4QEG8/YtbTjW/FxBk4koOeP0ITDNBvcx5Y2zVxW",
+    "/assets/build/easy_admin.css": "sha384-HC6AbXNTvAWRnR0YfGI1vtSldzNiqlDQmVAOKjc+NjQpoh0bneXvFc3IBBfrO/EP",
+    "/assets/build/security.css": "sha384-7o/5xKjUuvtl9oiuLiFj5qsbXN9ekA6+2SUakXXzou69j/FOagURU5YKeXJftNJY",
+    "/assets/build/animate.css": "sha384-+AmDPAQzT8S9gQIPQpeU0cxUMeH1ohiFv5eHYcYvrhdYyKGQnQP73w+9OyCIDkN2"
+  }
+}
