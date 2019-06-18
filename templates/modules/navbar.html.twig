@@ -19,7 +19,7 @@
         <a class="nav-link" href="{{ path('contact_form') }}"><i class="fas fa-address-card d-lg-none"></i> Contact</a>
       </li>
     {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-      <li class="nav-item d-flex align-items-center ml-lg-3">
+      <li class="nav-item ml-lg-3">
         <a class="btn btn-outline-primary" href="{{ path('security_logout') }}" data-toggle="tooltip" data-placement="auto" title="" data-original-title="uitloggen"><i class="fas fa-sign-out-alt"></i></a>
       </li>
     {% endif %}

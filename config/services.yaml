@@ -8,13 +8,11 @@ parameters:
     app_locales: nl|en
     timezone: 'Europe/Brussels'
     session_max_idle_time: 1800
-    app.mailer.from: 'webmaster@hozt.be'
-    app.mailer.name: 'Webmaster HoZT'
-    app.about.abbr: 'HoZT'
+    app.about.abbr: 'Kinderkoor'
     app.about.name: 'Kinderkoor Jubilate'
     app.about.org.name: '%app.about.name%'
-#   app.about.org.number: 'BE0644916871'
-#   app.about.bank_account: 'BE88 0689 0449 7341'
+    app.mailer.from: 'webmaster@kinderkoorjubilate.be'
+    app.mailer.name: '%app.about.name%'
     app.defaults.blogPost.items_home: 3
     app.defaults.blogPost.items_page: 10
     app.defaults.blogCategory.id: 1
