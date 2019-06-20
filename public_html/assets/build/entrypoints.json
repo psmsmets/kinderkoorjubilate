@@ -5,17 +5,24 @@
         "/assets/build/runtime.77e9a948.js",
         "/assets/build/0.2375624d.js",
         "/assets/build/1.76893ba2.js",
-        "/assets/build/kinderkoor.bc0d1b5b.js"
+        "/assets/build/kinderkoor.8582f5eb.js"
       ],
       "css": [
         "/assets/build/kinderkoor.3834b5a8.css"
       ]
     },
-    "form": {
+    "form_default": {
       "js": [
         "/assets/build/runtime.77e9a948.js",
         "/assets/build/0.2375624d.js",
-        "/assets/build/form.53941e34.js"
+        "/assets/build/form_default.8ba84b2b.js"
+      ]
+    },
+    "form_extended": {
+      "js": [
+        "/assets/build/runtime.77e9a948.js",
+        "/assets/build/0.2375624d.js",
+        "/assets/build/form_extended.356bff68.js"
       ]
     },
     "carousel": {
@@ -70,9 +77,10 @@
     "/assets/build/runtime.77e9a948.js": "sha384-E16bFFlalcHY1sH9ZWBqdXFyCluqgBTzT0KMwZRnpGIjychjULgUOY7JhlnKpT1a",
     "/assets/build/0.2375624d.js": "sha384-jDIhKUnvFIslPqAgXgRKPtCGahSHPauPtdEjjHQ4sZRIXz01QgRddKg44c9tOVcQ",
     "/assets/build/1.76893ba2.js": "sha384-VmO05cR/CBWfJ8fNQpSTHmlJLxI4TF4L9cKP3m7Kc7xuteuOO8zu8oZMUNR2wXF8",
-    "/assets/build/kinderkoor.bc0d1b5b.js": "sha384-EWx/0UQUm7klnjWHkcR3y9TDhUqaT5khX4Z1nIidVLrP0rH7rp4vW5LUDebUsCPV",
+    "/assets/build/kinderkoor.8582f5eb.js": "sha384-ssgy4FKDDGZu6Tsg5Ie96jsuAH6MFMvBfcfzHiftL7CEZcTrv0XlB6afUqhNkFmQ",
     "/assets/build/kinderkoor.3834b5a8.css": "sha384-u8e3KAekFwymiOR+sgumnE4XOU17k1itcDEC/Yj+e38XEWzb3SPvUNKURU7kWPcB",
-    "/assets/build/form.53941e34.js": "sha384-fTrADE+PO3zIPfH5iJZ955RDfWeviZrvTeAPRoPPZC83br1rGlhqrzPLkc6fCuCx",
+    "/assets/build/form_default.8ba84b2b.js": "sha384-uQg7t/kNgirwT1B6H+FBg9V5reDeQuZG22+dQZj2naFcCHdovY+W8W++Gdsw5k2d",
+    "/assets/build/form_extended.356bff68.js": "sha384-BOhUeQODCcYHhllWrgOF58pAuaQ+oo5Lr3i5P9ktNZLIQ3xmCK985JmJAkQ/0fxm",
     "/assets/build/carousel.45c97c9e.js": "sha384-H3xEfKNkKkpwd4iPQnUPquFV20uLB5Z4iVkewxTIPVkNzlaJZnclIPk2D421mdlQ",
     "/assets/build/calendar.28e49ce3.js": "sha384-vqXc9rdqSTTyvHr1TVg+/VBMg0l/638dQIIVjdAfoPBdD6naiW0ugS4XaI9xUGKS",
     "/assets/build/bootstrap.7f9aaaee.css": "sha384-sjiYZsVunSPpN7CCLXmdh+VLh9FMyH48fU7xcPLpRAl0/AB9Bbjjrjnth1JBZ9X3",

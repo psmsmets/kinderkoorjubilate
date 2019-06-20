@@ -34,11 +34,11 @@ $(document).ready(function(){
 
     $(function() {
        $('[data-toggle="popover"]').popover();
-    });
+    })
 
     $('#toTop').click(function(e){
-        $.scrollTo(0, 800); 
-    });
+        $.scrollTo(0, 700); 
+    })
 
     /*  init back to top icon */
     var scrollPos; 

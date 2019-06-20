@@ -6,9 +6,10 @@
   "assets/build/calendar.js": "/assets/build/calendar.28e49ce3.js",
   "assets/build/carousel.js": "/assets/build/carousel.45c97c9e.js",
   "assets/build/easy_admin.css": "/assets/build/easy_admin.1c816ab7.css",
-  "assets/build/form.js": "/assets/build/form.53941e34.js",
+  "assets/build/form_default.js": "/assets/build/form_default.8ba84b2b.js",
+  "assets/build/form_extended.js": "/assets/build/form_extended.356bff68.js",
   "assets/build/kinderkoor.css": "/assets/build/kinderkoor.3834b5a8.css",
-  "assets/build/kinderkoor.js": "/assets/build/kinderkoor.bc0d1b5b.js",
+  "assets/build/kinderkoor.js": "/assets/build/kinderkoor.8582f5eb.js",
   "assets/build/runtime.js": "/assets/build/runtime.77e9a948.js",
   "assets/build/security.css": "/assets/build/security.95132576.css"
 }

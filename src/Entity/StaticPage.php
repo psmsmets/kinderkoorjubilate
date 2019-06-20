@@ -98,18 +98,12 @@ class StaticPage
      */
     private $documentFile;
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\CalendarEvent", mappedBy="staticPage")
-     */
-    private $calendar;
-
     public function __construct()
     {
         $this->createdAt = new \DateTime("now");
         $this->updatedAt = $this->createdAt;
         $this->enabled = true;
         $this->showUpdatedAt = false;
-        $this->calendar = new ArrayCollection();
     }
 
     public function __toString(): ?string
@@ -315,37 +309,6 @@ class StaticPage
     public function getDocumentFile()
     {
         return $this->documentFile;
-    }
-
-    /**
-     * @return Collection|CalendarEvent[]
-     */
-    public function getCalendar(): Collection
-    {
-        return $this->calendar;
-    }
-
-    public function addCalendar(CalendarEvent $calendar): self
-    {
-        if (!$this->calendar->contains($calendar)) {
-            $this->calendar[] = $calendar;
-            $calendar->setStaticPage($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCalendar(CalendarEvent $calendar): self
-    {
-        if ($this->calendar->contains($calendar)) {
-            $this->calendar->removeElement($calendar);
-            // set the owning side to null (unless already changed)
-            if ($calendar->getStaticPage() === $this) {
-                $calendar->setStaticPage(null);
-            }
-        }
-
-        return $this;
     }
 
 }
