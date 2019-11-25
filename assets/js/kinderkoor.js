@@ -3,6 +3,10 @@ require('../css/kinderkoor.scss');
 require('bootstrap');
 require('jquery.scrollTo');
 
+var $ = require('jquery');
+window.$ = $;
+window.jQuery = $;
+
 function addAnimation(id, effect) {
     $('#'+id).removeClass().addClass(effect + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
         $(this).removeClass();
