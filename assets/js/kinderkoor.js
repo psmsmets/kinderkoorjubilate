@@ -7,22 +7,6 @@ var $ = require('jquery');
 window.$ = $;
 window.jQuery = $;
 
-function addAnimation(id, effect) {
-    $('#'+id).removeClass().addClass(effect + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-        $(this).removeClass();
-    });
-};
-
-function toClipboard(id){
-    var element = document.getElementById(id);
-    var textArea = document.createElement("textarea");
-    textArea.value = element.textContent;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand("Copy");
-    textArea.remove();
-};
-
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));

@@ -9,7 +9,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
-use Ambta\DoctrineEncryptBundle\Encryptors\EncryptorInterface;
 
 # entities
 use App\Entity\User;
@@ -27,19 +26,16 @@ class SecurityController extends AbstractController
     private $userRepository;
     private $mailer;
     private $encoder;
-    protected $encryptor;
     
     public function __construct(
             UserRepository $userRepository, 
             \Swift_Mailer $mailer, 
-            UserPasswordEncoderInterface $encoder, 
-            EncryptorInterface $encryptor
+            UserPasswordEncoderInterface $encoder
         )
     {
         $this->userRepository = $userRepository;
         $this->mailer = $mailer;
         $this->encoder = $encoder;
-        $this->encryptor = $encryptor;
     }
 
     /**
