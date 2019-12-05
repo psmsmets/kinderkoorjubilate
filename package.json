@@ -19,7 +19,6 @@
     },
     "dependencies": {
         "animate.css": "^3.7.2",
-        "bcswipe": "^2.0.3",
         "jquery": "^3.4.1",
         "jquery.scrollto": "^2.1.2",
         "popper.js": "^1.15.0"

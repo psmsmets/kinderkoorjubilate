@@ -3,21 +3,9 @@ require('../css/kinderkoor.scss');
 require('bootstrap');
 require('jquery.scrollTo');
 
-function addAnimation(id, effect) {
-    $('#'+id).removeClass().addClass(effect + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-        $(this).removeClass();
-    });
-};
-
-function toClipboard(id){
-    var element = document.getElementById(id);
-    var textArea = document.createElement("textarea");
-    textArea.value = element.textContent;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand("Copy");
-    textArea.remove();
-};
+var $ = require('jquery');
+window.$ = $;
+window.jQuery = $;
 
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();

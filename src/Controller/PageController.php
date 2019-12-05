@@ -309,7 +309,7 @@ class PageController extends AbstractController
 
             $data = $form->getData();
 
-            $message = (new \Swift_Message('HoZT.be contactformulier'))
+            $message = (new \Swift_Message('Kinderkoor contactformulier'))
                 ->setFrom(array($this->getParameter('app.mailer.from')=>$this->getParameter('app.mailer.name')))
                 ->setTo($data['question']->getEmail())
                 ->setReplyTo($data['email'])
