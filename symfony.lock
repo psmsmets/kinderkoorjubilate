@@ -1,7 +1,4 @@
 {
-    "behat/transliterator": {
-        "version": "v1.2.0"
-    },
     "cocur/slugify": {
         "version": "v3.2"
     },
@@ -81,18 +78,6 @@
     "doctrine/reflection": {
         "version": "v1.0.0"
     },
-    "easycorp/easy-log-handler": {
-        "version": "1.0",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "1.0",
-            "ref": "70062abc2cd58794d2a90274502f81b55cd9951b"
-        },
-        "files": [
-            "config/packages/dev/easy_log_handler.yaml"
-        ]
-    },
     "easycorp/easyadmin-bundle": {
         "version": "2.0",
         "recipe": {
@@ -111,9 +96,6 @@
     },
     "eo/honeypot-bundle": {
         "version": "v1.2.3"
-    },
-    "fig/link-util": {
-        "version": "1.0.0"
     },
     "friendsofsymfony/ckeditor-bundle": {
         "version": "2.0",
@@ -147,6 +129,9 @@
     },
     "pagerfanta/pagerfanta": {
         "version": "v2.1.2"
+    },
+    "php": {
+        "version": "7.2"
     },
     "phpdocumentor/reflection-common": {
         "version": "1.0.1"
@@ -257,6 +242,9 @@
     "symfony/dotenv": {
         "version": "v4.2.8"
     },
+    "symfony/error-handler": {
+        "version": "v4.4.8"
+    },
     "symfony/event-dispatcher": {
         "version": "v4.2.8"
     },
@@ -366,11 +354,17 @@
             "tests/.gitignore"
         ]
     },
+    "symfony/polyfill-intl-grapheme": {
+        "version": "v1.17.0"
+    },
     "symfony/polyfill-intl-icu": {
         "version": "v1.11.0"
     },
     "symfony/polyfill-intl-idn": {
         "version": "v1.11.0"
+    },
+    "symfony/polyfill-intl-normalizer": {
+        "version": "v1.17.0"
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.11.0"
@@ -449,6 +443,9 @@
     },
     "symfony/stopwatch": {
         "version": "v4.2.8"
+    },
+    "symfony/string": {
+        "version": "v5.0.8"
     },
     "symfony/swiftmailer-bundle": {
         "version": "2.5",
