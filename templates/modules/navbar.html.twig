@@ -12,8 +12,11 @@
       <li class="nav-item {% if currentPath starts with path('blog') %}active{% endif%}">
         <a class="nav-link" href="{{ path('blog') }}"><i class="fas fa-newspaper d-lg-none"></i> Blog</a>
       </li>
+      <li class="nav-item {% if currentPath == '/over' %}active{% endif%}">
+        <a class="nav-link" href="/over"><i class="fas fa-users d-lg-none"></i> Over</a>
+      </li>
       <li class="nav-item {% if currentPath == '/lid-worden' %}active{% endif%}">
-        <a class="nav-link" href="/lid-worden"><i class="fas fa-users d-lg-none"></i> Lid worden</a>
+        <a class="nav-link" href="/lid-worden"><i class="fas fa-info d-lg-none"></i> Lid worden</a>
       </li>
       <li class="nav-item {% if currentPath starts with path('contact_form') %}active{% endif%}">
         <a class="nav-link" href="{{ path('contact_form') }}"><i class="fas fa-address-card d-lg-none"></i> Contact</a>
